@@ -1,4 +1,18 @@
 {
+  "from_ai_npc": {
+    "file_name": "/home/aiscuser/blob/sony-cpdc-challenge/data/chat_format-v2/from_ainpc_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system"
+    }
+  },
   "identity": {
     "file_name": "identity.json"
   },

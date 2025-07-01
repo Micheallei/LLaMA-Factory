@@ -1,6 +1,7 @@
 ### model
-model_name_or_path: /home/aiscuser/huggingface_models/Qwen2.5-14B-Instruct
+model_name_or_path: /home/aiscuser/huggingface_models/Qwen/Qwen3-14B
 trust_remote_code: true
+enable_thinking: false
 
 ### method
 stage: sft
@@ -10,8 +11,8 @@ deepspeed: examples/deepspeed/ds_z3_config.json  # choices: [ds_z0_config.json, 
 flash_attn: fa2
 
 ### dataset
-dataset: from_ai_npc
-template: qwen
+dataset: from_ai_npc_v3
+template: qwen3
 cutoff_len: 4096
 max_samples: 1000000
 overwrite_cache: true
@@ -20,9 +21,10 @@ dataloader_num_workers: 4
 # tokenized_path: /home/aiscuser/sony-cpdc/output/qwen2.5-7b_sft_tokenized
 
 ### output
-output_dir: /home/aiscuser/LLaMA-Factory/saves/qwen2.5-14b_full_sft_from_ai_npc_0624
+output_dir: /home/aiscuser/LLaMA-Factory/saves/qwen3-14b_full_sft_from_ai_npc_v3_0626
 logging_steps: 10
-save_steps: 1000
+# save_steps: 1000
+save_strategy: epoch
 plot_loss: true
 overwrite_output_dir: true
 save_only_model: false

@@ -1,4 +1,46 @@
 {
+  "3m_sft_dataset_0708_train": {
+    "file_name": "/home/aiscuser/blob/HumanLLM/data/v3/sft_data/sft_dataset_0708/train_no_imitation_no_general.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system"
+    }
+  },
+  "3m_sft_dataset_0708_train_indomain": {
+    "file_name": "/home/aiscuser/blob/HumanLLM/data/v3/sft_data/sft_dataset_0708/test_in_domain.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system"
+    }
+  },
+  "3m_sft_dataset_0708_train_general": {
+    "file_name": "/home/aiscuser/blob/HumanLLM/data/v3/sft_data/sft_dataset_0708/test_general.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system"
+    }
+  },
   "from_ai_npc_v3": {
     "file_name": "/home/aiscuser/blob/sony-cpdc-challenge/data/chat_format-v3/from_ainpc_train.json",
     "formatting": "sharegpt",

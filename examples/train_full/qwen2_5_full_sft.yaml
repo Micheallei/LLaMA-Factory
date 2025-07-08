@@ -1,28 +1,28 @@
 ### model
-model_name_or_path: /home/aiscuser/huggingface_models/Qwen2.5-14B-Instruct
+model_name_or_path: /home/aiscuser/huggingface_models/Qwen2.5-7B-Instruct
 trust_remote_code: true
 
 ### method
 stage: sft
 do_train: true
 finetuning_type: full
-deepspeed: examples/deepspeed/ds_z3_config.json  # choices: [ds_z0_config.json, ds_z2_config.json, ds_z3_config.json]
+deepspeed: examples/deepspeed/ds_z2_config.json  # choices: [ds_z0_config.json, ds_z2_config.json, ds_z3_config.json]
 flash_attn: fa2
 
 ### dataset
-dataset: from_ai_npc
+dataset: 3m_sft_dataset_0708_train
 template: qwen
-cutoff_len: 4096
-max_samples: 1000000
+cutoff_len: 8192
+max_samples: 100000000
 overwrite_cache: true
 preprocessing_num_workers: 16
 dataloader_num_workers: 4
 # tokenized_path: /home/aiscuser/sony-cpdc/output/qwen2.5-7b_sft_tokenized
 
 ### output
-output_dir: /home/aiscuser/LLaMA-Factory/saves/qwen2.5-14b_full_sft_from_ai_npc_0624
-logging_steps: 10
-save_steps: 1000
+output_dir: /home/aiscuser/LLaMA-Factory/saves/0708_Qwen2.5-7B-Instruct_lr5e-6_seq8192_batch64_zero1_1epoch_no_imitation_no_general
+logging_steps: 100
+save_steps: 4000
 plot_loss: true
 overwrite_output_dir: true
 save_only_model: false
@@ -30,18 +30,19 @@ report_to: wandb  # choices: [none, wandb, tensorboard, swanlab, mlflow]
 
 ### train
 per_device_train_batch_size: 1
-gradient_accumulation_steps: 4
-learning_rate: 1.0e-5
-num_train_epochs: 3.0
+gradient_accumulation_steps: 16
+learning_rate: 5.0e-6
+num_train_epochs: 1.0
 lr_scheduler_type: cosine
 warmup_ratio: 0.05
 bf16: true
 ddp_timeout: 180000000
 resume_from_checkpoint: null
+seed: 2025
 
-### eval
-# eval_dataset: alpaca_en_demo
+## eval
+eval_dataset: 3m_sft_dataset_0708_train_indomain,3m_sft_dataset_0708_train_general
 # val_size: 0.1
-# per_device_eval_batch_size: 1
-# eval_strategy: steps
-# eval_steps: 500
+per_device_eval_batch_size: 1
+eval_strategy: steps
+eval_steps: 1000

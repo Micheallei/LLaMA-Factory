@@ -1,6 +1,6 @@
 {
   "3m_sft_dataset_0708_train": {
-    "file_name": "/home/aiscuser/blob/HumanLLM/data/v3/sft_data/sft_dataset_0708/train_no_imitation_no_general.json",
+    "file_name": "/home/aiscuser/blob/HumanLLM/data/v3/sft_data/sft_dataset_0708/train_splits",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"

@@ -1,4 +1,18 @@
 {
+  "3m_sft_dataset_0723_train_blogauthorship": {
+    "file_name": "/home/aiscuser/blob/HumanLLM/data/v3/sft_data/sft_dataset_0723/train_blogauthorship.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system"
+    }
+  },
   "3m_sft_dataset_0723_train": {
     "file_name": "/home/aiscuser/blob/HumanLLM/data/v3/sft_data/sft_dataset_0723/train_splits",
     "formatting": "sharegpt",
